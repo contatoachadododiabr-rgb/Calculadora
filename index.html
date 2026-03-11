@@ -12,57 +12,62 @@
 
 body{
 font-family: Arial;
-background:#f2f2f2;
+background:#f4f6f9;
+margin:0;
 text-align:center;
-margin-top:60px;
+}
+
+header{
+background:#2c7be5;
+color:white;
+padding:30px;
+font-size:28px;
+font-weight:bold;
+}
+
+.sub{
+margin-top:10px;
+font-size:16px;
+font-weight:normal;
 }
 
 .container{
-background:white;
-width:400px;
+max-width:800px;
 margin:auto;
-padding:30px;
+margin-top:40px;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.2s;
 }
 
-.menu{
-margin-bottom:30px;
+.card:hover{
+transform:translateY(-5px);
 }
 
-.menu a{
-display:block;
-margin:10px;
-padding:10px;
-background:#2c7be5;
-color:white;
+.card a{
 text-decoration:none;
-border-radius:5px;
+font-size:18px;
+color:#2c7be5;
+font-weight:bold;
 }
 
-.menu a:hover{
-background:#1a5bbf;
-}
-
-input{
-width:80%;
-padding:10px;
-margin:10px;
-font-size:16px;
-}
-
-button{
-padding:10px 20px;
-font-size:16px;
-background:#2c7be5;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#1a5bbf;
+footer{
+margin-top:50px;
+padding:20px;
+font-size:14px;
+color:#777;
 }
 
 </style>
@@ -71,56 +76,43 @@ background:#1a5bbf;
 
 <body>
 
+<header>
+
+Ferramentas Online Grátis
+
+<div class="sub">
+Calculadoras e utilidades gratuitas
+</div>
+
+</header>
+
 <div class="container">
 
-<h1>Ferramentas Online</h1>
+<h2>Escolha uma ferramenta</h2>
 
-<p>Escolha uma ferramenta:</p>
+<div class="grid">
 
-<div class="menu">
+<div class="card">
+<a href="imc.html">Calculadora de IMC</a>
+</div>
 
-<a href="index.html">Calculadora de IMC</a>
-
+<div class="card">
 <a href="calculadora-idade.html">Calculadora de Idade</a>
+</div>
+
+<div class="card">
+<a href="contador-dias.html">Contador de Dias</a>
+</div>
 
 </div>
 
-<hr>
-
-<h2>Calculadora de IMC</h2>
-
-<p>Digite seu peso e altura</p>
-
-<input id="peso" placeholder="Peso (kg)">
-<br>
-
-<input id="altura" placeholder="Altura (m)">
-<br><br>
-
-<button onclick="calcular()">Calcular IMC</button>
-
-<h3 id="resultado"></h3>
-
 </div>
 
-<script>
+<footer>
 
-function calcular(){
+© 2026 Ferramentas Online
 
-let peso = document.getElementById("peso").value.replace(",",".");
-let altura = document.getElementById("altura").value.replace(",",".");
-
-peso = parseFloat(peso);
-altura = parseFloat(altura);
-
-let imc = peso/(altura*altura);
-
-document.getElementById("resultado").innerText =
-"Seu IMC é: " + imc.toFixed(2);
-
-}
-
-</script>
+</footer>
 
 </body>
 
