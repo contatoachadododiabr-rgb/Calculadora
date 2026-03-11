@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Contador de Dias</title>
+<meta charset="UTF-8">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+margin-top:60px;
+}
+
+.container{
+background:white;
+width:400px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.menu{
+margin-bottom:30px;
+}
+
+.menu a{
+display:block;
+margin:10px;
+padding:10px;
+background:#2c7be5;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.menu a:hover{
+background:#1a5bbf;
+}
+
+input{
+width:80%;
+padding:10px;
+margin:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5bbf;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Contador de Dias</h1>
+
+<div class="menu">
+
+<a href="index.html">Calculadora de IMC</a>
+
+<a href="calculadora-idade.html">Calculadora de Idade</a>
+
+</div>
+
+<p>Escolha duas datas</p>
+
+<input type="date" id="data1">
+<br>
+
+<input type="date" id="data2">
+<br><br>
+
+<button onclick="calcularDias()">Calcular</button>
+
+<h3 id="resultado"></h3>
+
+</div>
+
+<script>
+
+function calcularDias(){
+
+let data1 = new Date(document.getElementById("data1").value);
+let data2 = new Date(document.getElementById("data2").value);
+
+let diferenca = data2 - data1;
+
+let dias = diferenca / (1000 * 60 * 60 * 24);
+
+document.getElementById("resultado").innerText =
+"A diferença é de " + dias + " dias";
+
+}
+
+</script>
+
+</body>
+
+</html>
