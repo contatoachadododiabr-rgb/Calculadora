@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Calculadora de IMC</title>
+<title>Ferramentas Online Grátis</title>
 <meta charset="UTF-8">
 
 <meta name="google-site-verification" content="E0KqpmiHE_dCWdprryOOYfzq5xn1-FdC0D_Hnr8EyiQ" />
@@ -14,16 +14,34 @@ body{
 font-family: Arial;
 background:#f2f2f2;
 text-align:center;
-margin-top:80px;
+margin-top:60px;
 }
 
 .container{
 background:white;
-width:350px;
+width:400px;
 margin:auto;
 padding:30px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.menu{
+margin-bottom:30px;
+}
+
+.menu a{
+display:block;
+margin:10px;
+padding:10px;
+background:#2c7be5;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.menu a:hover{
+background:#1a5bbf;
 }
 
 input{
@@ -55,7 +73,21 @@ background:#1a5bbf;
 
 <div class="container">
 
-<h1>Calculadora de IMC</h1>
+<h1>Ferramentas Online</h1>
+
+<p>Escolha uma ferramenta:</p>
+
+<div class="menu">
+
+<a href="index.html">Calculadora de IMC</a>
+
+<a href="calculadora-idade.html">Calculadora de Idade</a>
+
+</div>
+
+<hr>
+
+<h2>Calculadora de IMC</h2>
 
 <p>Digite seu peso e altura</p>
 
@@ -67,7 +99,7 @@ background:#1a5bbf;
 
 <button onclick="calcular()">Calcular IMC</button>
 
-<h2 id="resultado"></h2>
+<h3 id="resultado"></h3>
 
 </div>
 
