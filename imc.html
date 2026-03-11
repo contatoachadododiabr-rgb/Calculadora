@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Calculadora de IMC</title>
+<meta charset="UTF-8">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+text-align:center;
+}
+
+header{
+background:#2c7be5;
+color:white;
+padding:25px;
+font-size:24px;
+}
+
+.container{
+background:white;
+max-width:400px;
+margin:auto;
+margin-top:50px;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:80%;
+padding:12px;
+margin:10px;
+font-size:16px;
+}
+
+button{
+padding:12px 25px;
+font-size:16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5bbf;
+}
+
+.menu{
+margin-top:20px;
+}
+
+.menu a{
+text-decoration:none;
+color:#2c7be5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Calculadora de IMC
+
+</header>
+
+<div class="container">
+
+<p>Digite seu peso e altura</p>
+
+<input id="peso" placeholder="Peso (kg)">
+<br>
+
+<input id="altura" placeholder="Altura (m)">
+<br><br>
+
+<button onclick="calcular()">Calcular IMC</button>
+
+<h3 id="resultado"></h3>
+
+<div class="menu">
+
+<br>
+<a href="index.html">← Voltar para Home</a>
+
+</div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let peso = document.getElementById("peso").value.replace(",",".");
+let altura = document.getElementById("altura").value.replace(",",".");
+
+peso = parseFloat(peso);
+altura = parseFloat(altura);
+
+let imc = peso/(altura*altura);
+
+document.getElementById("resultado").innerText =
+"Seu IMC é: " + imc.toFixed(2);
+
+}
+
+</script>
+
+</body>
+
+</html>
